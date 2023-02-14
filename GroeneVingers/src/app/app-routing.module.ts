@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '**', component: HomePageComponent }
 ];
 
-@NgModule({ //
+@NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
