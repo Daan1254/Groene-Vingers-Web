@@ -8,8 +8,11 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { WipPageComponent } from './pages/wip-page/wip-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { VerifyComponent } from './components/auth/verify/verify.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { SignupComponent } from './components/signup/signup.component';
     LoginPageComponent,
     LoginComponent,
     SignupComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
