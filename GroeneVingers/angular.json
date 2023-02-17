@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "GroeneVingers": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "nl-NL": "src/locale/messages.nl.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "nl-NL"
+            ],
             "outputPath": "dist/groene-vingers",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -94,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
