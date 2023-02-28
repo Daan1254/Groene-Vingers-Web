@@ -4,8 +4,8 @@ import {WipPageComponent} from "./pages/wip-page/wip-page.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
-import {VerifyComponent} from "./components/auth/verify/verify.component";
 import {AuthGuard} from "./components/auth/auth.guard";
+import {AccountPageComponent} from "./pages/account-page/account-page.component";
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -16,16 +16,11 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    canActivateChild: [AuthGuard],
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'verify',
-        component: VerifyComponent
-      },
-      {
         path: 'account',
-
+        component: AccountPageComponent
       }
     ]
   },

@@ -13,16 +13,19 @@ export class AuthGuard implements CanActivate {
 
   private checkUserAccess(): boolean {
     if (!getCookie('GroeneVinger-Auth-V1')) {
+      console.log('No token found')
       this.router.navigate(['/login'])
       return false;
     }
 
-    const hasAccess: boolean = this.authService.verify()
-    console.log(hasAccess)
-    if (!hasAccess) {
-      this.router.navigate(['/login'])
-      return false
-    }
+    this.authService.verify().subscribe((response) => {
+
+    })
+    // if (!hasAccess) {
+    //   console.log('No access')
+    //   this.router.navigate(['/login'])
+    //   return false
+    // }
 
     return true
   }

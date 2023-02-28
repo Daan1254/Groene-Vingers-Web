@@ -1,2 +1,5 @@
-<app-login (toggleSignUp)="signUp = !signUp" *ngIf="!signUp"></app-login>
-<app-signup (toggleSignUp)="signUp = !signUp" *ngIf="signUp"></app-signup>
+<ng-container *ngIf="!authService.isLoading">
+  <app-login (toggleSignUp)="signUp = !signUp" *ngIf="!signUp"></app-login>
+  <app-signup (toggleSignUp)="signUp = !signUp" *ngIf="signUp"></app-signup>
+</ng-container>
+<app-loader *ngIf="authService.isLoading"></app-loader>
