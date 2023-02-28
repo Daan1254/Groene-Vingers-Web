@@ -11,6 +11,6 @@ export class VerifyComponent implements OnInit{
   }
 
   async ngOnInit() {
-    await this.authService.verify()
+    this.authService.verify()
   }
 }

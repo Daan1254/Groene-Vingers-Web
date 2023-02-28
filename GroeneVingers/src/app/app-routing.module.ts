@@ -5,12 +5,30 @@ import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {VerifyComponent} from "./components/auth/verify/verify.component";
+import {AuthGuard} from "./components/auth/auth.guard";
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'contact', component: ContactPageComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'verify', component: VerifyComponent },
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
+  {
+    path: 'auth',
+    canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'verify',
+        component: VerifyComponent
+      },
+      {
+        path: 'account',
+
+      }
+    ]
+  },
   { path: '**', component: WipPageComponent },
 ];
 

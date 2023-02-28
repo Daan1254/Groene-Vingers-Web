@@ -9,6 +9,7 @@ export class AuthService {
 
   constructor(private readonly  http: HttpClient, private readonly router: Router) { }
   public error: string | null = null
+  public user: object | null = null
 
   public async login(email: string, password: string) {
     try {
@@ -26,12 +27,16 @@ export class AuthService {
     }
   }
 
-  async verify() {
+  verify(): boolean {
     try {
       this.http.get(`http://localhost:3000/api/auth/validate`, {headers: {
         'auth-token': getCookie('GroeneVinger-Auth-V1') as string
         }}).subscribe((response) => {
-        console.log(response)
+          if (response) {
+            this.user = response
+            return true
+          }
+        return !!response;
       });
     } catch (e) {
       console.error(e)
@@ -39,6 +44,8 @@ export class AuthService {
         console.error(e.message)
         this.error = e.message
       }
+      return false;
     }
+    return false;
   }
 }
