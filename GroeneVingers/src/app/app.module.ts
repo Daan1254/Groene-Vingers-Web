@@ -15,6 +15,9 @@ import {AuthGuard} from "./components/auth/auth.guard";
 import {NavBarComponent} from "./components/shared/nav-bar/nav-bar.component";
 import {AccountPageComponent} from "./pages/account-page/account-page.component";
 import { LoaderComponent } from './components/shared/loader/loader.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -27,13 +30,16 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
     LoginComponent,
     SignupComponent,
     AccountPageComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
