@@ -18,6 +18,7 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
+import { OrderHistoryComponent } from './components/auth/account/order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatIconModule} from "@angular/material/icon";
     SignupComponent,
     AccountPageComponent,
     LoaderComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,
