@@ -1,0 +1,26 @@
+<div class="bg-white my-10">
+  <div class="container mx-auto overflow-hidden">
+    <h2 class="sr-only">Products</h2>
+
+    <div class="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+      <div *ngFor="let product of activeProducts " class="group relative p-4 border border-gray-200 hover:border-primary transition-colors duration-300  sm:p-6">
+        <div class="rounded-lg overflow-hidden border-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
+          <img [src]="product.image" alt="TODO" class="w-full h-full object-center object-cover">
+        </div>
+        <div class="pt-10 pb-4 text-center">
+          <h3 class="text-sm font-medium text-gray-900">
+            <a href="#">
+              <span aria-hidden="true" class="absolute inset-0"></span>
+              {{product.name}}
+            </a>
+          </h3>
+
+          <p class="mt-1 text-sm text-gray-500 truncate">{{product.description}}</p>
+
+          <p class="mt-4 text-base font-medium text-gray-900">&euro; {{product.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-paginator [maxSize]="maxSize" [pageNumber]="pageNumber" (pageNumberChange)="loadActiveProducts($event)"></app-paginator>
+</div>

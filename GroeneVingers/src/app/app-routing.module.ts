@@ -6,6 +6,7 @@ import {ContactPageComponent} from "./pages/contact-page/contact-page.component"
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {AuthGuard} from "./components/auth/auth.guard";
 import {AccountPageComponent} from "./pages/account-page/account-page.component";
+import {CatalogusPageComponent} from "./pages/catalogus-page/catalogus-page.component";
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
+  },
+  {
+    path: 'catalogus',
+    component: CatalogusPageComponent
   },
   {
     path: 'auth',

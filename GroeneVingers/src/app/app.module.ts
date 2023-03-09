@@ -19,6 +19,9 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import { OrderHistoryComponent } from './components/auth/account/order-history/order-history.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { CatalogusPageComponent } from './pages/catalogus-page/catalogus-page.component';
+import { PaginatorComponent } from './components/product/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { OrderHistoryComponent } from './components/auth/account/order-history/o
     AccountPageComponent,
     LoaderComponent,
     OrderHistoryComponent,
+    ProductListComponent,
+    CatalogusPageComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
