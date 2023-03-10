@@ -26,6 +26,7 @@ import { ProductDetailComponent } from './components/product/product-detail/prod
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ShoppingCartComponent } from './components/shared/icons/shopping-cart/shopping-cart.component';
 import {AccountIconComponent} from "./components/shared/icons/account-icon/account-icon.component";
+import { ProductItemComponent } from './components/shared/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {AccountIconComponent} from "./components/shared/icons/account-icon/accou
     PaginatorComponent,
     ProductDetailComponent,
     ShoppingCartComponent,
-    AccountIconComponent
+    AccountIconComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
