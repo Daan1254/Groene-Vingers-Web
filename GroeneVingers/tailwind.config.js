@@ -9,11 +9,12 @@ module.exports = {
         'primary': '#26C068',
         'secondary': '#51cd86',
         'tertiary': '#1e9a53',
-        'disabled': '#cccccc'
+        'disabled': '#cccccc',
       },
     },
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

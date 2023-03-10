@@ -19,6 +19,14 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import { OrderHistoryComponent } from './components/auth/account/order-history/order-history.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { CatalogusPageComponent } from './pages/catalogus-page/catalogus-page.component';
+import { PaginatorComponent } from './components/product/paginator/paginator.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ShoppingCartComponent } from './components/shared/icons/shopping-cart/shopping-cart.component';
+import {AccountIconComponent} from "./components/shared/icons/account-icon/account-icon.component";
+import { ProductItemComponent } from './components/shared/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +41,13 @@ import { OrderHistoryComponent } from './components/auth/account/order-history/o
     AccountPageComponent,
     LoaderComponent,
     OrderHistoryComponent,
+    ProductListComponent,
+    CatalogusPageComponent,
+    PaginatorComponent,
+    ProductDetailComponent,
+    ShoppingCartComponent,
+    AccountIconComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +56,8 @@ import { OrderHistoryComponent } from './components/auth/account/order-history/o
     HttpClientModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

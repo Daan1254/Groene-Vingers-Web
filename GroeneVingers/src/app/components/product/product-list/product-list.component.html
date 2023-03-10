@@ -1,0 +1,11 @@
+<app-loader *ngIf="productService.isLoading"></app-loader>
+<div class="bg-white my-10" *ngIf="!productService.isLoading">
+  <div class="container mx-auto overflow-hidden">
+    <h2 class="sr-only">Products</h2>
+
+    <div class="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+      <app-product-item *ngFor="let product of activeProducts" [product]="product"></app-product-item>
+    </div>
+  </div>
+  <app-paginator [maxSize]="maxSize" [pageNumber]="pageNumber" (pageNumberChange)="loadActiveProducts($event)"></app-paginator>
+</div>
