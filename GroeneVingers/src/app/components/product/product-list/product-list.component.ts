@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
   public pageNumber = 1
   public pageSize = 16
   public maxSize = 32
-  constructor(private readonly productService: ProductService) {}
+  constructor(public readonly productService: ProductService) {}
 
   async ngOnInit() {
     this.products = await this.productService.getProducts()

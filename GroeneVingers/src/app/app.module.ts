@@ -22,6 +22,10 @@ import { OrderHistoryComponent } from './components/auth/account/order-history/o
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 import { CatalogusPageComponent } from './pages/catalogus-page/catalogus-page.component';
 import { PaginatorComponent } from './components/product/paginator/paginator.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ShoppingCartComponent } from './components/shared/icons/shopping-cart/shopping-cart.component';
+import {AccountIconComponent} from "./components/shared/icons/account-icon/account-icon.component";
 
 @NgModule({
   declarations: [
@@ -39,6 +43,9 @@ import { PaginatorComponent } from './components/product/paginator/paginator.com
     ProductListComponent,
     CatalogusPageComponent,
     PaginatorComponent,
+    ProductDetailComponent,
+    ShoppingCartComponent,
+    AccountIconComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,8 @@ import { PaginatorComponent } from './components/product/paginator/paginator.com
     HttpClientModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

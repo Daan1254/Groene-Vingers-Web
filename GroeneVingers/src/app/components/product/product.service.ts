@@ -5,11 +5,12 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class ProductService {
-
+    public isLoading: boolean = false;
     constructor(private http: HttpClient ) { }
 
 
   public async getProducts() {
+      this.isLoading = true;
       try {
           return await this.http.get('http://localhost:3000/api/product').toPromise()
       } catch(e) {
@@ -18,6 +19,20 @@ export class ProductService {
           console.error(e.message)
         }
         return []
+      } finally {
+        this.isLoading = false;
+      }
+  }
+
+  public async getProduct(uuid: string) {
+      this.isLoading = true;
+      try {
+          return await this.http.get(`http://localhost:3000/api/product/${uuid}`).toPromise()
+      }
+      catch(e) {
+        console.error(e)
+      } finally {
+        this.isLoading = false;
       }
   }
 }
